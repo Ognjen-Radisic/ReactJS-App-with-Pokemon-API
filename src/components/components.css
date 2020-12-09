@@ -1,0 +1,41 @@
+img {
+  width: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+}
+.nav-center {
+  display: flex;
+  justify-content: center;
+
+  margin: 0 auto;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: transparent;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  transition: var(--mainTransition);
+}
+
+.navbar.white {
+  padding: 3rem;
+  background: var(--mainWhite);
+  border-bottom: 2px solid var(--primaryColor);
+  box-shadow: var(--lightShadow);
+}
+@media screen and (min-width: 800px) {
+  img {
+    width: 2rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+}

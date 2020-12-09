@@ -1,5 +1,11 @@
 import React from 'react'
-import { BrowseRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+
+import Navbar from './components/Navbar'
+
+import Home from './pages/Home'
+import SinglePokemon from './pages/SinglePokemon'
+import Error from './pages/Error'
 
 function App() {
   return (
