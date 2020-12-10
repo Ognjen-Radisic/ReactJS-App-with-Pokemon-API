@@ -5,7 +5,7 @@ const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true)
-  const [pokeListURL, setPokeListURL] = useState([])
+  const [pokeList, setPokeList] = useState([])
   const [prevPage, setPrevPage] = useState(null)
   const [nextPage, setNextPage] = useState(null)
 
@@ -14,14 +14,19 @@ const AppProvider = ({ children }) => {
     try {
       const response = await fetch(url)
       const data = await response.json()
-      console.log(data)
       if (data) {
-        const newPokeListURL = data.results.map((item) => {
-          return item.url
-        })
-        setPokeListURL(newPokeListURL)
+        const newPokeList = await Promise.all(
+          data.results.map((item) => {
+            const singlePokemonData = fetchSinglePokemon(item.url)
+            if (singlePokemonData) {
+              return singlePokemonData
+            }
+          })
+        )
+
+        setPokeList(newPokeList)
       } else {
-        setPokeListURL([])
+        setPokeList([])
       }
       setLoading(false)
     } catch (error) {
@@ -30,12 +35,19 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  const fetchSinglePokemon = async (given_url) => {
+    const response = await fetch(given_url)
+    const data = await response.json()
+    if (data) {
+      return data
+    }
+  }
+
   useEffect(() => {
     fetchPokemons()
   }, [])
-
   return (
-    <AppContext.Provider value={{ loading, pokeListURL }}>
+    <AppContext.Provider value={{ loading, pokeList }}>
       {children}
     </AppContext.Provider>
   )

@@ -1,18 +1,25 @@
 import React from 'react'
 import { useGlobalContext } from '../context'
+import Loading from './Loading'
 
 const PokemonList = () => {
-  const { loading, pokeListURL } = useGlobalContext()
+  const { loading, pokeList } = useGlobalContext()
 
   if (loading) {
-    return (
-      <section>
-        <h2>LOADING...</h2>
-      </section>
-    )
+    return <Loading />
   }
 
-  return <section>{pokeListURL.map((item) => console.log(item))}</section>
+  return (
+    <section>
+      {pokeList.map((pokemon) => {
+        return (
+          <article>
+            <h1>{pokemon.name}</h1>
+          </article>
+        )
+      })}
+    </section>
+  )
 }
 
 export default PokemonList
