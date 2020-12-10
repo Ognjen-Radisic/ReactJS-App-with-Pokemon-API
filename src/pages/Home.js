@@ -1,7 +1,16 @@
 import React from 'react'
 
+import Pagination from '../components/Pagination'
+import PokemonList from '../components/PokemonList'
+
 const Home = () => {
-  return <div style={{ marginTop: '100rem' }}>hello</div>
+  return (
+    <main>
+      <Pagination />
+      <PokemonList />
+      <div style={{ marginTop: '100rem' }}>hello</div>
+    </main>
+  )
 }
 
 export default Home

@@ -1,3 +1,5 @@
+/* NAVBAR */
+
 img {
   width: 1rem;
 }
@@ -16,6 +18,7 @@ h1 {
   top: 0;
   left: 0;
   width: 100%;
+  padding: 3rem;
   background: transparent;
   height: 5rem;
   display: flex;
@@ -25,8 +28,10 @@ h1 {
 }
 
 .navbar.white {
-  padding: 3rem;
+  padding: 0;
+  height: 3rem;
   background: var(--mainWhite);
+  align-items: normal;
   border-bottom: 2px solid var(--primaryColor);
   box-shadow: var(--lightShadow);
 }
@@ -37,5 +42,10 @@ h1 {
 
   h1 {
     font-size: 4rem;
+  }
+
+  .navbar.white {
+    height: 5rem;
+    align-items: center;
   }
 }
