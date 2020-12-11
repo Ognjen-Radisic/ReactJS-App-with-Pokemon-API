@@ -50,6 +50,25 @@ h1 {
   }
 }
 
+.pagination-buttons {
+  display: flex;
+  justify-content: center;
+}
+.pagi-btn {
+  margin-right: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--primaryColor);
+  background-color: var(--mainWhite);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+
+.pagi-btn:hover {
+  background-color: var(--primaryColor);
+  color: var(--mainWhite);
+}
+
 /* BUTTONS */
 
 .btn {

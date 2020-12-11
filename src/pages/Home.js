@@ -8,7 +8,7 @@ const Home = () => {
     <main>
       <Pagination />
       <PokemonList />
-      <div style={{ marginTop: '100rem' }}>hello</div>
+      <Pagination />
     </main>
   )
 }

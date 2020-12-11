@@ -9,12 +9,14 @@ const AppProvider = ({ children }) => {
   const [prevPage, setPrevPage] = useState(null)
   const [nextPage, setNextPage] = useState(null)
 
-  const fetchPokemons = async () => {
+  const fetchPokemons = async (given_url) => {
     setLoading(true)
     try {
-      const response = await fetch(url)
+      const response = await fetch(given_url)
       const data = await response.json()
       if (data) {
+        setPrevPage(data.previous)
+        setNextPage(data.next)
         const newPokeList = await Promise.all(
           data.results.map((item) => {
             const singlePokemonData = fetchSinglePokemon(item.url)
@@ -43,11 +45,25 @@ const AppProvider = ({ children }) => {
     }
   }
 
+  const loadNextPage = async () => {
+    if (nextPage) {
+      fetchPokemons(nextPage)
+    }
+  }
+
+  const loadPrevPage = async () => {
+    if (prevPage) {
+      fetchPokemons(prevPage)
+    }
+  }
+
   useEffect(() => {
-    fetchPokemons()
+    fetchPokemons(url)
   }, [])
   return (
-    <AppContext.Provider value={{ loading, pokeList }}>
+    <AppContext.Provider
+      value={{ loading, pokeList, loadNextPage, loadPrevPage }}
+    >
       {children}
     </AppContext.Provider>
   )
