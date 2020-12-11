@@ -2,6 +2,7 @@ import React from 'react'
 import { useGlobalContext } from '../context'
 import Loading from './Loading'
 import Pokemon from './Pokemon'
+import './components.css'
 
 const PokemonList = () => {
   const { loading, pokeList } = useGlobalContext()

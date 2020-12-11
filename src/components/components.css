@@ -49,6 +49,23 @@ h1 {
     align-items: center;
   }
 }
+
+/* BUTTONS */
+
+.btn {
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  margin-right: auto;
+  border-radius: 2rem;
+  color: var(--mainWhite);
+  background-color: var(--primaryColor);
+  transition: var(--mainTransition);
+}
+
+.btn:hover {
+  background-color: var(--primaryLightColor);
+  color: var(--mainBlack);
+}
 /* 
 ====== 
 Pokemon List 
