@@ -30,7 +30,7 @@ const Pokemon = ({ id, name, sprites, types }) => {
           return <h4 key={index}>{item.type.name}</h4>
         })}
       </div>
-      <Link to={`/pokemon/:${id}`} className='btn'>
+      <Link to={`/pokemon/${id}`} className='btn'>
         More details..
       </Link>
     </article>
