@@ -9,6 +9,8 @@ const AppProvider = ({ children }) => {
   const [prevPage, setPrevPage] = useState(null)
   const [nextPage, setNextPage] = useState(null)
 
+  const [loadLastPage, setLoadLastPage] = useState(null)
+
   const fetchPokemons = async (given_url) => {
     setLoading(true)
     try {
@@ -47,12 +49,14 @@ const AppProvider = ({ children }) => {
 
   const loadNextPage = async () => {
     if (nextPage) {
+      setLoadLastPage(nextPage)
       fetchPokemons(nextPage)
     }
   }
 
   const loadPrevPage = async () => {
     if (prevPage) {
+      setLoadLastPage(prevPage)
       fetchPokemons(prevPage)
     }
   }

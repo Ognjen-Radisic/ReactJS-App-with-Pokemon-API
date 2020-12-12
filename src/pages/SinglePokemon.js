@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { useGlobalContext } from '../context'
 import Loading from '../components/Loading'
 
 const url = 'https://pokeapi.co/api/v2/pokemon/'
@@ -41,13 +40,77 @@ const SinglePokemon = () => {
   //destructuring of pokemon value
   console.log(pokemon)
   const { abilities, height, weight, types, stats, name, sprites } = pokemon
+
+  const stats_values = {
+    hp: stats[0].base_stat,
+    attack: stats[1].base_stat,
+    defense: stats[2].base_stat,
+    speed: stats[5].base_stat,
+  }
   return (
-    <div>
-      <h1>Hello{console.log('FFF')}</h1>
-      <h1>{name}</h1>
-      <h1>{height}</h1>
-      <h1>{weight}</h1>
-    </div>
+    <main>
+      <section className='section center'>
+        <div className='mar-bottom'>
+          <Link to='/' className='btn margin-zero'>
+            back to pokemons
+          </Link>
+        </div>
+        <div className='single-pokemon'>
+          <img
+            src={sprites.other.dream_world.front_default}
+            alt={name}
+            className='resizer'
+          />
+          <div className='single-pokemon-info'>
+            <h1 className='center capitalize'>{name}</h1>
+            <div className='pokemon-footer'>
+              {types.map((item, index) => {
+                return <h4 key={index}>{item.type.name}</h4>
+              })}
+            </div>
+            <div className='single-row'>
+              <p>
+                <span className='text-background'>Height: </span>
+                {(height * 0.1).toFixed(2)}m
+              </p>
+              <p>
+                <span className='text-background'>Weight: </span>
+                {(weight * 0.1).toFixed(1)}kg
+              </p>
+            </div>
+            <div className='single-row'>
+              <p>
+                <span className='text-background'>HP: </span>
+                {stats_values.hp}
+              </p>
+              <p>
+                <span className='text-background'>Speed: </span>
+                {stats_values.speed}
+              </p>
+            </div>
+            <div className='single-row'>
+              <p>
+                <span className='text-background'>Attack: </span>
+                {stats_values.attack}
+              </p>
+              <p>
+                <span className='text-background'>Defense: </span>
+                {stats_values.defense}
+              </p>
+            </div>
+            <div className='single-row'>
+              <p>
+                <span className='text-background'>Abilities: </span>
+
+                {abilities.map((item, index) => {
+                  return <>*{item.ability.name}* </>
+                })}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
   )
 }
 

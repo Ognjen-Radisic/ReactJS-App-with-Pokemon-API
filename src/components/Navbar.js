@@ -17,11 +17,11 @@ const Navbar = () => {
         <h1>
           P
           <span>
-            <img src={pokeball} />
+            <img src={pokeball} alt='o' />
           </span>
           kem
           <span>
-            <img src={pokeball} />
+            <img src={pokeball} alt='o' />
           </span>
           ns
         </h1>

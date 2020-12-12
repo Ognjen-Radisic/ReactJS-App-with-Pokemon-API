@@ -1,4 +1,4 @@
-/* NAVBAR */
+/* NAVBAR ****************************************************************/
 
 img {
   width: 1rem;
@@ -35,6 +35,8 @@ h1 {
   /* border-bottom: 2px solid var(--primaryColor); */
   box-shadow: var(--lightShadow);
 }
+
+/* for poke balls in logo */
 @media screen and (min-width: 800px) {
   img {
     width: 2rem;
@@ -69,13 +71,14 @@ h1 {
   color: var(--mainWhite);
 }
 
-/* BUTTONS */
+/* BUTTONS *************************************************************************************8*/
 
 .btn {
   padding: 0.5rem 1rem;
   margin: 1rem;
   margin-right: auto;
   border-radius: 2rem;
+  text-transform: capitalize;
   color: var(--mainWhite);
   background-color: var(--primaryColor);
   transition: var(--mainTransition);
@@ -85,14 +88,23 @@ h1 {
   background-color: var(--primaryLightColor);
   color: var(--mainBlack);
 }
+
+.center {
+  text-align: center;
+  margin: 0;
+}
+.mar-bottom {
+  margin: 0;
+  margin-bottom: 5rem;
+}
 /* 
 ====== 
-Pokemon List 
+Pokemon List *************************************************************************************8
 ======
 */
 
 .section {
-  padding: 5rem 0;
+  padding-bottom: 5rem;
 }
 .section-title {
   font-size: 2rem;
@@ -118,7 +130,7 @@ Pokemon List
 }
 /*
 ====== 
-Pokemon
+Pokemon*********************************************************************************************
 ======
 */
 
@@ -168,7 +180,60 @@ Pokemon
   background-color: tomato;
 }
 
-/* LOADER */
+/* SINGLE POKEMON PAGE **********************************************************************************/
+
+.single-pokemon {
+  width: var(--smallWidth);
+  max-width: var(--fullWidth);
+  margin: 0 auto;
+  text-align: left;
+}
+.single-pokemon p {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.single-row {
+  display: flex;
+  justify-content: space-around;
+}
+
+.single-pokemon img {
+  height: 20rem;
+  width: 100%;
+  display: block;
+  object-fit: scale-down;
+  border-top-left-radius: var(--mainBorderRadius);
+  border-top-right-radius: var(--mainBorderRadius);
+}
+.single-pokemon-info {
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr 1.5fr 0.3fr 1.5fr 0.5fr;
+  border: 1px solid black;
+}
+
+.margin-zero {
+  margin: 0rem;
+}
+.capitalize {
+  text-transform: capitalize;
+}
+.text-background {
+  margin-right: 0.5rem;
+  background: var(--primaryLightColor);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--mainBorderRadius);
+  color: black;
+}
+
+@media screen and (min-width: 880px) {
+  .single-pokemon {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+  }
+}
+
+/* LOADER ****************************************************************************/
 
 .loader,
 .loader:before,
