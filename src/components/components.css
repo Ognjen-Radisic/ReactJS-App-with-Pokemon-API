@@ -189,12 +189,10 @@ Pokemon*************************************************************************
   text-align: left;
 }
 .single-pokemon p {
-  font-size: 2rem;
-  font-weight: 700;
-}
-.single-row {
-  display: flex;
-  justify-content: space-around;
+  font-size: 1rem;
+  font-weight: 500;
+  /* display: flex;
+  align-items: center; */
 }
 
 .single-pokemon img {
@@ -208,6 +206,10 @@ Pokemon*************************************************************************
 .single-pokemon-info {
   display: grid;
   grid-template-rows: 0.5fr 0.5fr 1.5fr 0.3fr 1.5fr 0.5fr;
+}
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .margin-zero {
@@ -224,11 +226,22 @@ Pokemon*************************************************************************
   color: black;
 }
 
+.margin-left {
+  margin-left: 0.5rem;
+}
+
 @media screen and (min-width: 880px) {
   .single-pokemon {
     display: grid;
     grid-template-columns: 2fr 3fr;
     align-items: center;
+  }
+  .single-pokemon p {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .pading-right {
+    padding-right: 12rem;
   }
 }
 

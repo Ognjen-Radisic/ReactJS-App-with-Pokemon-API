@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Loading from '../components/Loading'
 import colorTypes from '../components/colorTypes'
+import { FaBeer } from 'react-icons/fa'
 
 const url = 'https://pokeapi.co/api/v2/pokemon/'
 
@@ -63,8 +64,8 @@ const SinglePokemon = () => {
             className='resizer'
           />
           <div className='single-pokemon-info'>
-            <h1 className='center capitalize'>{name}</h1>
-            <div className='pokemon-footer'>
+            <h1 className='center capitalize pading-right'>{name}</h1>
+            <div className='pokemon-footer pading-right'>
               {types.map((item, index) => {
                 return (
                   <h4
@@ -76,7 +77,7 @@ const SinglePokemon = () => {
                 )
               })}
             </div>
-            <div className='single-row'>
+            <div className='columns'>
               <p>
                 <span className='text-background'>Height: </span>
                 {(height * 0.1).toFixed(2)}m
@@ -86,27 +87,30 @@ const SinglePokemon = () => {
                 {(weight * 0.1).toFixed(1)}kg
               </p>
             </div>
-            <div className='single-row'>
+            <div className='columns'>
               <p>
                 <span
                   className='text-background'
                   style={{ backgroundColor: `${colorTypes.hp}` }}
                 >
-                  HP:{' '}
+                  Health:
                 </span>
                 {stats_values.hp}
+                <span>
+                  <FaBeer className='margin-left' />
+                </span>
               </p>
               <p>
                 <span
                   className='text-background'
                   style={{ backgroundColor: `${colorTypes.speed}` }}
                 >
-                  Speed:{' '}
+                  Speed:
                 </span>
                 {stats_values.speed}
               </p>
             </div>
-            <div className='single-row'>
+            <div className='columns'>
               <p>
                 <span
                   className='text-background'
@@ -126,7 +130,7 @@ const SinglePokemon = () => {
                 {stats_values.defense}
               </p>
             </div>
-            <div className='single-row'>
+            <div>
               <p>
                 <span className='text-background'>Abilities: </span>
 
