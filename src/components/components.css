@@ -205,7 +205,7 @@ Pokemon*************************************************************************
 }
 .single-pokemon-info {
   display: grid;
-  grid-template-rows: 0.5fr 0.5fr 1.5fr 0.3fr 1.5fr 0.5fr;
+  grid-template-rows: 0.5fr 0.5fr 1.5fr 0.3fr 0.3fr 1.5fr;
 }
 .columns {
   display: grid;
@@ -226,10 +226,14 @@ Pokemon*************************************************************************
   color: black;
 }
 
-.margin-left {
-  margin-left: 0.5rem;
+.icon-position {
+  display: flex;
+  align-items: center;
+  align-content: center;
 }
-
+.margin-left {
+  margin-left: 0.4rem;
+}
 @media screen and (min-width: 880px) {
   .single-pokemon {
     display: grid;

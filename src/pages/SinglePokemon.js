@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Loading from '../components/Loading'
 import colorTypes from '../components/colorTypes'
-import { FaBeer } from 'react-icons/fa'
+import { IoMdHeart } from 'react-icons/io'
+import { BsFillLightningFill } from 'react-icons/bs'
+import { RiSwordFill } from 'react-icons/ri'
+import { BsShieldFill } from 'react-icons/bs'
 
 const url = 'https://pokeapi.co/api/v2/pokemon/'
 
@@ -88,7 +91,7 @@ const SinglePokemon = () => {
               </p>
             </div>
             <div className='columns'>
-              <p>
+              <p className='icon-position'>
                 <span
                   className='text-background'
                   style={{ backgroundColor: `${colorTypes.hp}` }}
@@ -96,38 +99,52 @@ const SinglePokemon = () => {
                   Health:
                 </span>
                 {stats_values.hp}
-                <span>
-                  <FaBeer className='margin-left' />
-                </span>
+
+                <IoMdHeart
+                  className='margin-left'
+                  style={{ color: `${colorTypes.hp}` }}
+                />
               </p>
-              <p>
+              <p className='icon-position'>
                 <span
                   className='text-background'
                   style={{ backgroundColor: `${colorTypes.speed}` }}
                 >
                   Speed:
                 </span>
-                {stats_values.speed}
+                {stats_values.speed}{' '}
+                <BsFillLightningFill
+                  className='margin-left'
+                  style={{ color: `${colorTypes.speed}` }}
+                />
               </p>
             </div>
             <div className='columns'>
-              <p>
+              <p className='icon-position'>
                 <span
                   className='text-background'
                   style={{ backgroundColor: `${colorTypes.attack}` }}
                 >
-                  Attack:{' '}
+                  Attack:
                 </span>
-                {stats_values.attack}
+                {stats_values.attack}{' '}
+                <RiSwordFill
+                  className='margin-left'
+                  style={{ color: `${colorTypes.attack}` }}
+                />
               </p>
-              <p>
+              <p className='icon-position'>
                 <span
                   className='text-background'
                   style={{ backgroundColor: `${colorTypes.defense}` }}
                 >
-                  Defense:{' '}
+                  Defense:
                 </span>
-                {stats_values.defense}
+                {stats_values.defense}{' '}
+                <BsShieldFill
+                  className='margin-left'
+                  style={{ color: `${colorTypes.defense}` }}
+                />
               </p>
             </div>
             <div>
