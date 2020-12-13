@@ -208,7 +208,6 @@ Pokemon*************************************************************************
 .single-pokemon-info {
   display: grid;
   grid-template-rows: 0.5fr 0.5fr 1.5fr 0.3fr 1.5fr 0.5fr;
-  border: 1px solid black;
 }
 
 .margin-zero {
@@ -219,7 +218,7 @@ Pokemon*************************************************************************
 }
 .text-background {
   margin-right: 0.5rem;
-  background: var(--primaryLightColor);
+  background: #ccdfe1;
   padding: 0.25rem 0.5rem;
   border-radius: var(--mainBorderRadius);
   color: black;

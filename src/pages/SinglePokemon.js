@@ -88,21 +88,41 @@ const SinglePokemon = () => {
             </div>
             <div className='single-row'>
               <p>
-                <span className='text-background'>HP: </span>
+                <span
+                  className='text-background'
+                  style={{ backgroundColor: `${colorTypes.hp}` }}
+                >
+                  HP:{' '}
+                </span>
                 {stats_values.hp}
               </p>
               <p>
-                <span className='text-background'>Speed: </span>
+                <span
+                  className='text-background'
+                  style={{ backgroundColor: `${colorTypes.speed}` }}
+                >
+                  Speed:{' '}
+                </span>
                 {stats_values.speed}
               </p>
             </div>
             <div className='single-row'>
               <p>
-                <span className='text-background'>Attack: </span>
+                <span
+                  className='text-background'
+                  style={{ backgroundColor: `${colorTypes.attack}` }}
+                >
+                  Attack:{' '}
+                </span>
                 {stats_values.attack}
               </p>
               <p>
-                <span className='text-background'>Defense: </span>
+                <span
+                  className='text-background'
+                  style={{ backgroundColor: `${colorTypes.defense}` }}
+                >
+                  Defense:{' '}
+                </span>
                 {stats_values.defense}
               </p>
             </div>
@@ -111,7 +131,7 @@ const SinglePokemon = () => {
                 <span className='text-background'>Abilities: </span>
 
                 {abilities.map((item, index) => {
-                  return <>*{item.ability.name}* </>
+                  return <a key={index}>*{item.ability.name}* </a>
                 })}
               </p>
             </div>

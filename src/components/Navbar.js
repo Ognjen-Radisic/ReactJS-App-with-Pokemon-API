@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import pokeball from '../pokemon.svg'
 import './components.css'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   const [scroll, setScroll] = useState(false)
@@ -14,17 +15,19 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scroll && 'white'}`}>
       <div className='nav-center'>
-        <h1>
-          P
-          <span>
-            <img src={pokeball} alt='o' />
-          </span>
-          kem
-          <span>
-            <img src={pokeball} alt='o' />
-          </span>
-          ns
-        </h1>
+        <Link to='/'>
+          <h1>
+            P
+            <span>
+              <img src={pokeball} alt='o' />
+            </span>
+            kem
+            <span>
+              <img src={pokeball} alt='o' />
+            </span>
+            ns
+          </h1>
+        </Link>
       </div>
     </nav>
   )
