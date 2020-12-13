@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import './components.css'
+import colorTypes from './colorTypes'
 
 const Pokemon = ({ id, name, sprites, types }) => {
   React.useEffect(() => {
@@ -27,7 +28,14 @@ const Pokemon = ({ id, name, sprites, types }) => {
       </div>
       <div className='pokemon-footer'>
         {types.map((item, index) => {
-          return <h4 key={index}>{item.type.name}</h4>
+          return (
+            <h4
+              key={index}
+              style={{ backgroundColor: `${colorTypes[item.type.name]}` }}
+            >
+              {item.type.name}
+            </h4>
+          )
         })}
       </div>
       <Link to={`/pokemon/${id}`} className='btn'>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Loading from '../components/Loading'
+import colorTypes from '../components/colorTypes'
 
 const url = 'https://pokeapi.co/api/v2/pokemon/'
 
@@ -65,7 +66,14 @@ const SinglePokemon = () => {
             <h1 className='center capitalize'>{name}</h1>
             <div className='pokemon-footer'>
               {types.map((item, index) => {
-                return <h4 key={index}>{item.type.name}</h4>
+                return (
+                  <h4
+                    key={index}
+                    style={{ backgroundColor: `${colorTypes[item.type.name]}` }}
+                  >
+                    {item.type.name}
+                  </h4>
+                )
               })}
             </div>
             <div className='single-row'>
